@@ -1,0 +1,44 @@
+<script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+<link rel="import" href="../bower_components/font-roboto/roboto.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- Clock element -->
+<polymer-element name="polymer-clock">
+
+  <template>
+    <style>
+      div { font-family: RobotoDraft; }
+      .font8 { font-size: 8em; }
+      .font3 { font-size: 3em; }
+      .centered { text-align: center; }
+    </style>
+
+    <div>
+      <span class="font8">{{ time }}</span>
+      <strong class="font3">{{ meridiem }}</strong>
+    </div>
+
+    <div>
+      <span>{{ date }}</span>
+    </div>
+  </template>
+
+  <script>
+    Polymer('polymer-clock', {
+      ready: function() {
+        this.runClock();
+      },
+
+      runClock: function () {
+        var date = moment();
+
+        this.time = date.format('hh:mm:ss');
+        this.meridiem = date.format('A');
+        this.date = date.format('MMMM DD, YYYY');
+
+        setTimeout(this.runClock.bind(this), 500);
+      }
+    });
+  </script>
+
+</polymer-element>
