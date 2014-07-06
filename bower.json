@@ -1,0 +1,23 @@
+{
+  "name": "new_tab",
+  "description": "a new tab page built using polymer",
+  "homepage": "index.html",
+  "keywords": [],
+  "author": "Josh Callender",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements"
+  },
+  "resolutions": {
+    "core-item": "master",
+    "core-menu": "master",
+    "core-header-panel": "master",
+    "core-iconset": "master",
+    "core-collapse": "master",
+    "core-selection": "master",
+    "core-meta": "master",
+    "core-iconset-svg": "master"
+  }
+}
